@@ -367,18 +367,6 @@
     });
 
 
-//    $anota.inject=['scope'];
-    function $anota(){
-        return {
-            write :function(){
-                console.log("claro que si anotado");
-            }
-        }
-    };
-
-    angular.module('ImageCropper').service('$anota', $anota);
-
-
 
   /*
    * DEPENDENCY
