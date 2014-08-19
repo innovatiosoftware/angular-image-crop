@@ -14,24 +14,14 @@
     (function() {
 
       angular.module('myApp', ['ImageCropper'])
-        .controller('MainController', function($scope,$anota) {
+        .controller('MainController', function($scope) {
           console.log('MainController');
-                  $anota.write();
-          $scope.imageCropResult = null;
-          $scope.showImageCropper = false;
-
-
           $scope.$watch('imageCropResult', function(newVal) {
             if (newVal) {
               console.log('imageCropResult', newVal);
             }
-
           });
-
-
-
         });
-
     })();
   </script>
   <!-- REQUIRED 3/3 - the image crop directive -->
@@ -46,13 +36,6 @@
          step="imageCropStep"
          result="imageCropResult"
          ng-show="showImageCropper"></image-crop>
-       <!--<div ng-show="imageCropResult">
-         <img ng-src="{{ imageCropResult }}" alt="The Cropped Image">
-         <p>And this is the actual data uri which represents the cropped image, which you'll then upload to your server:</p>
-         <textarea class="result-datauri">{{ imageCropResult }}</textarea>
-       </div>-->
-
-       <!--<p ng-hide="imageCropResult">Not cropped yet</p>-->
      </div>
 
 

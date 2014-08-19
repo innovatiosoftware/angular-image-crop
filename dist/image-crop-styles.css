@@ -4,8 +4,8 @@
 
 /* Core component styles */
 .ng-image-crop {
-    text-align: center;
-    margin: 0 auto;
+    /*text-align: center;*/
+    /*margin: 0 auto;*/
     position: relative;
     -webkit-user-select: none;
     -moz-user-select: none;

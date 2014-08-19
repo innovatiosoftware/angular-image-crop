@@ -1,13 +1,14 @@
 {
-    "name": "angular-image-crop",
-    "version": "0.0.1",
-    "dependencies": {},
-    "devDependencies": {
-        "gulp": "~3.8.7",
-        "gulp-uglify": "~0.3.1",
-        "gulp-concat": "~2.3.4"
-    },
-    "engines": {
-        "node": ">=0.8.0"
-    }
+  "name": "angular-image-crop",
+  "version": "0.0.1",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "~3.8.7",
+    "gulp-uglify": "~0.3.1",
+    "gulp-concat": "~2.3.4",
+    "gulp-htmlmin": "~0.1.3"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
 }

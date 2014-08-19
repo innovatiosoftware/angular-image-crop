@@ -3,7 +3,8 @@
  */
 var gulp = require('gulp'),
     uglify = require('gulp-uglify');
-concat = require('gulp-concat');
+concat = require('gulp-concat')
+htmlmin = require('gulp-htmlmin');
 
 var paths = {
     scripts: ['*.js', '!gulpfile.js'],
@@ -12,7 +13,7 @@ var paths = {
 };
 
 
-gulp.task('default', ['scripts', 'styles', 'other']);
+gulp.task('default', ['scripts', 'styles']);
 
 gulp.task('scripts', function () {
     console.log('processing scripts...');
@@ -29,7 +30,9 @@ gulp.task('styles', function () {
 
 gulp.task('other', function () {
     console.log('processing other...');
-    gulp.src(paths.html).pipe(gulp.dest('dist'))
+    gulp.src(paths.html)
+        .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(gulp.dest('dist'))
 });
 
 

@@ -1,4 +1,4 @@
-<div class="fileUpload ng-image-crop ng-image-crop--{{ shape }}" ng-style="moduleStyles">
+<div class="ng-image-crop ng-image-crop--{{ shape }}" ng-style="moduleStyles">
     <section ng-style="sectionStyles" ng-show="step==1">
         <span class="btn purple fileinput-button">
             <i class="fa fa-file-image-o"></i>
@@ -13,13 +13,13 @@
 
         <div class="buttons">
             <button ng-click="crop()" class="btn yellow"><i class="fa fa-crop"></i></button>
-            <button ng-click="reset()" class="btn blue"><i class="fa fa-refresh"></i></button>
+            <button ng-click="reset()" class="btn blue"><i class="fa fa-times"></i></button>
         </div>
         <div ng-style="croppingGuideStyles" class="cropping-guide"></div>
     </section>
     <section ng-style="sectionStyles" class="section-final" ng-show="step==3">
         <div class="buttons">
-            <button ng-click="reset()" class="btn blue"><i class="fa fa-refresh"></i></button>
+            <button ng-click="reset()" class="btn blue"><i class="fa fa-times"></i></button>
         </div>
         <div ng-style="croppingGuideStyles" class="cropping-guide-final">
             <img class="cropped-image" ng-src="{{ result }}"/>
