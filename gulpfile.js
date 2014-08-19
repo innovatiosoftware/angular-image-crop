@@ -3,8 +3,9 @@
  */
 var gulp = require('gulp'),
     uglify = require('gulp-uglify');
-concat = require('gulp-concat')
-htmlmin = require('gulp-htmlmin');
+concat = require('gulp-concat'),
+htmlmin = require('gulp-htmlmin'),
+cssmin = require('gulp-cssmin');
 
 var paths = {
     scripts: ['*.js', '!gulpfile.js'],
@@ -24,7 +25,9 @@ gulp.task('scripts', function () {
 
 gulp.task('styles', function () {
     console.log('processing styles...');
-    gulp.src(paths.styles).pipe(gulp.dest('dist'))
+    gulp.src(paths.styles)
+        .pipe(cssmin())
+        .pipe(gulp.dest('dist'))
 
 });
 
