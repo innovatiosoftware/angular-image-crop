@@ -14,7 +14,7 @@ var paths = {
 };
 
 
-gulp.task('default', ['scripts', 'styles']);
+gulp.task('default', ['scripts', 'styles','other']);
 
 gulp.task('scripts', function () {
     console.log('processing scripts...');

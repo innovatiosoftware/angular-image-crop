@@ -1,11 +1,12 @@
-<div class="ng-image-crop ng-image-crop--{{ shape }}" ng-style="moduleStyles">
-    <section ng-style="sectionStyles" ng-show="step==1">
+<div class="ng-image-crop ng-image-crop--{{ shape }}" ng-style="moduleStyles" >
+    <section ng-style="sectionStyles" ng-show="step==1" >
         <span class="btn purple fileinput-button">
             <i class="fa fa-file-image-o"></i>
             <input type="file" class="image-crop-filepicker" name="file">
         </span>
+        <div ng-style="croppingGuideStyles" class="cropping-guide"></div>
     </section>
-    <section ng-style="sectionStyles" ng-show="step==2">
+    <section ng-style="sectionStyles" ng-show="step==2" >
 
         <canvas class="cropping-canvas" width="{{ canvasWidth }}" height="{{ canvasHeight }}"
                 ng-mousemove="onCanvasMouseMove($event)" ng-mousedown="onCanvasMouseDown($event)"
@@ -17,13 +18,12 @@
         </div>
         <div ng-style="croppingGuideStyles" class="cropping-guide"></div>
     </section>
-    <section ng-style="sectionStyles" class="section-final" ng-show="step==3">
+    <section ng-style="sectionStyles" class="section-final" ng-show="step==3" style="background-color: transparent;background-image: none">
         <div class="buttons">
             <button ng-click="reset()" class="btn blue"><i class="fa fa-times"></i></button>
         </div>
         <div ng-style="croppingGuideStyles" class="cropping-guide-final">
             <img class="cropped-image" ng-src="{{ result }}"/>
-            <button ng-click="upload()" class="btn green buttons"><i class="fa fa-upload"></i></button>
         </div>
         <img class="final-cropped-image" ng-src="{{ croppedDataUri }}" ng-hide="hideOriginal || false"/>
     </section>
