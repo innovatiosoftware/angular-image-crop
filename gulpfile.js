@@ -2,19 +2,21 @@
  * Created by Edxe on 8/18/14.
  */
 var gulp = require('gulp'),
-    uglify = require('gulp-uglify');
-concat = require('gulp-concat'),
-htmlmin = require('gulp-htmlmin'),
-cssmin = require('gulp-cssmin');
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
+    htmlmin = require('gulp-htmlmin'),
+    usemin = require('gulp-usemin'),
+    rev = require('gulp-rev'),
+    cssmin = require('gulp-cssmin');
 
 var paths = {
     scripts: ['*.js', '!gulpfile.js'],
     styles: ['*.css'],
-    html: ['*.html','!index.html']
+    html: ['*.html', '!index.html']
 };
 
 
-gulp.task('default', ['scripts', 'styles','other']);
+gulp.task('default', ['scripts', 'styles', 'html']);
 
 gulp.task('scripts', function () {
     console.log('processing scripts...');
@@ -31,8 +33,8 @@ gulp.task('styles', function () {
 
 });
 
-gulp.task('other', function () {
-    console.log('processing other...');
+gulp.task('html', function () {
+    console.log('processing html\'s...');
     gulp.src(paths.html)
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest('dist'))

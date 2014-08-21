@@ -5,12 +5,14 @@
  */
 (function () {
 
-
+    var scripts = document.getElementsByTagName("script")
+    var currentScriptPath = scripts[scripts.length-1].src;
     angular.module('ImageCropper', []).directive('imageCrop', function () {
 
         return {
-            template: '<div class="ng-image-crop ng-image-crop--{{ shape }}" ng-style="moduleStyles"><section ng-style="sectionStyles" ng-show="step==1"><span class="btn purple fileinput-button"><i class="fa fa-file-image-o"></i> <input type="file" class="image-crop-filepicker" name="file"></span><div ng-style="croppingGuideStyles" class="cropping-guide"></div></section><section ng-style="sectionStyles" ng-show="step==2"><canvas class="cropping-canvas" width="{{ canvasWidth }}" height="{{ canvasHeight }}" ng-mousemove="onCanvasMouseMove($event)" ng-mousedown="onCanvasMouseDown($event)" ng-mouseup="onCanvasMouseUp($event)"></canvas><div class="buttons"><button ng-click="crop()" class="btn yellow"><i class="fa fa-crop"></i></button> <button ng-click="reset()" class="btn blue"><i class="fa fa-times"></i></button></div><div ng-style="croppingGuideStyles" class="cropping-guide"></div></section><section ng-style="sectionStyles" class="section-final" ng-show="step==3" style="background-color: transparent;background-image: none"><div class="buttons"><button ng-click="reset()" class="btn blue"><i class="fa fa-times"></i></button></div><div ng-style="croppingGuideStyles" class="cropping-guide-final"><img class="cropped-image" ng-src="{{ result }}"></div><img class="final-cropped-image" ng-src="{{ croppedDataUri }}" ng-hide="hideOriginal || false"></section></div>',
+//            template: '<div class="ng-image-crop ng-image-crop--{{ shape }}" ng-style="moduleStyles"><section ng-style="sectionStyles" ng-show="step==1"><span class="btn purple fileinput-button"><i class="fa fa-file-image-o"></i> <input type="file" class="image-crop-filepicker" name="file"></span><div ng-style="croppingGuideStyles" class="cropping-guide"></div></section><section ng-style="sectionStyles" ng-show="step==2"><canvas class="cropping-canvas" width="{{ canvasWidth }}" height="{{ canvasHeight }}" ng-mousemove="onCanvasMouseMove($event)" ng-mousedown="onCanvasMouseDown($event)" ng-mouseup="onCanvasMouseUp($event)"></canvas><div class="buttons"><button ng-click="crop()" class="btn yellow"><i class="fa fa-crop"></i></button> <button ng-click="reset()" class="btn blue"><i class="fa fa-times"></i></button></div><div ng-style="croppingGuideStyles" class="cropping-guide"></div></section><section ng-style="sectionStyles" class="section-final" ng-show="step==3" style="background-color: transparent;background-image: none"><div class="buttons"><button ng-click="reset()" class="btn blue"><i class="fa fa-times"></i></button></div><div ng-style="croppingGuideStyles" class="cropping-guide-final"><img class="cropped-image" ng-src="{{ result }}"></div><img class="final-cropped-image" ng-src="{{ croppedDataUri }}" ng-hide="hideOriginal || false"></section></div>',
 //            templateUrl: 'template.html',
+            templateUrl: currentScriptPath.replace('image-crop.js', 'template.html'),
             replace: true,
             restrict: 'E',
             scope: {
