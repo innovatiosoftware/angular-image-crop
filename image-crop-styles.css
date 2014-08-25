@@ -35,7 +35,7 @@
     box-shadow:         0px 5px 30px 0px rgba(50, 50, 50, 1);
 }
 
-.btn{
+.ng-image-crop > .btn{
     border-width: 0;
     padding: 7px 14px;
     font-size: 14px;
@@ -54,13 +54,13 @@
 }
 
 
-.btn.green {
+.ng-image-crop > .btn.green {
     color: white;
     text-shadow: none;
     background-color: #35aa47;
 }
 
-.btn.purple {
+.ng-image-crop > .btn.purple {
     color: white;
     text-shadow: none;
     background-color: #852b99;
@@ -117,20 +117,20 @@
     cursor: pointer;
 }
 
-.btn.yellow {
+.ng-image-crop > .btn.yellow {
     color: white;
     text-shadow: none;
     background-color: #eca22e !important;
 }
 
-.btn.yellow[disabled] {
+.ng-image-crop > .btn.yellow[disabled] {
     background-color: #ffb848;
 
     color: #fff !important;
     outline: none !important;
 }
 
-.btn.blue{
+.ng-image-crop > .btn.blue{
     text-shadow: none;
     color: white;
     text-shadow: none;
