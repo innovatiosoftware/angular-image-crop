@@ -23,7 +23,7 @@
             <button ng-click="reset()" class="btn blue"><i class="fa fa-times"></i></button>
         </div>
         <div ng-style="croppingGuideStyles" class="cropping-guide-final">
-            <img class="cropped-image" ng-src="{{ result }}"/>
+            <img class="cropped-image" ng-src="{{ result.raw }}"/>
         </div>
         <img class="final-cropped-image" ng-src="{{ croppedDataUri }}" ng-hide="hideOriginal || false"/>
     </section>

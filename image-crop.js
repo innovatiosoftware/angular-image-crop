@@ -223,6 +223,7 @@
                     var r = tempCanvas.toDataURL().split(",");
                     scope.result.mimeType = r[0].split(":")[1];
                     scope.result.data = r[1];
+                    scope.result.raw = tempCanvas.toDataURL();
 
                     scope.$apply();
                     resetCrop();
