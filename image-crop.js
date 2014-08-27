@@ -6,7 +6,7 @@
 (function () {
 
     var scripts = document.getElementsByTagName("script")
-    var currentScriptPath = scripts[scripts.length-1].src;
+    var currentScriptPath = scripts[scripts.length - 1].src;
     angular.module('ImageCropper', []).directive('imageCrop', function () {
 
         return {
@@ -218,7 +218,12 @@
                     tempCanvasContext.drawImage($finalImg, -50, -50);
 
                     document.getElementsByClassName('section-final')[0].appendChild(tempCanvas);
-                    scope.result = tempCanvas.toDataURL();
+
+                    scope.result = {mimeType: '', data: ''};
+                    var r = tempCanvas.toDataURL().split(",");
+                    scope.result.mimeType = r[0].split(":")[1];
+                    scope.result.data = r[1];
+
                     scope.$apply();
                     resetCrop();
 
