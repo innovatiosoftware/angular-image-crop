@@ -221,7 +221,7 @@
 
                     scope.result = {mimeType: '', data: ''};
                     var r = tempCanvas.toDataURL().split(",");
-                    scope.result.mimeType = r[0].split(":")[1];
+                    scope.result.mimeType = r[0].split(":")[1].split(";")[0];
                     scope.result.data = r[1];
                     scope.result.raw = tempCanvas.toDataURL();
 
